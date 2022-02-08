@@ -1,13 +1,14 @@
 import { useState } from "react";
 import './registershop.css'
 import Axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 const RegisterShop = ()=>{
 
     const [storeName, setStoreName] = useState("");
     const [place, setPlace] = useState("");
     const [email, setEmail] = useState("");
-
+    const nevigate = useNavigate()
 
     const handleFormSubmission = (e) =>{
         e.preventDefault()
@@ -16,6 +17,7 @@ const RegisterShop = ()=>{
             storeName, city : place, email
         }).then(response=>{
             console.log(response);
+            nevigate('/')
         })
     }
 

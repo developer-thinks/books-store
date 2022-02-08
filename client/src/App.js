@@ -8,17 +8,26 @@ import Header from './components/Header';
 
 import {BrowserRouter as Router, Link, Route, Routes, useNavigate} from 'react-router-dom'
 import RegisterShop from './components/RegisterShop';
+import { useEffect } from 'react';
+import Axios from 'axios';
 
 
 function App() {
 
   const [bookStore, setBookStore] = useState([])
-  bookStore.push({"name":"sapna books"})
-  bookStore.push({"name":"Vijaya books"})
-  bookStore.push({"name":"Amazon kindle"})
-  bookStore.push({"name":"google books"})
-  bookStore.push({"name":"evergreen books"})
-  bookStore.push({"name":"mantri square"})
+  // bookStore.push({"name":"sapna books"})
+  // bookStore.push({"name":"Vijaya books"})
+  // bookStore.push({"name":"Amazon kindle"})
+  // bookStore.push({"name":"google books"})
+  // bookStore.push({"name":"evergreen books"})
+  // bookStore.push({"name":"mantri square"})
+
+  useEffect(async()=>{
+    Axios.get('http://localhost:5000/api/getallshops').then(response=>{
+      // console.log(response);
+       setBookStore(response.data.shops)
+    })
+  },[bookStore])
 
   const AvailableShops = ()=>{
     return(
@@ -37,7 +46,7 @@ function App() {
         bookStore ?
         bookStore.map((stores, key)=>{
           return(
-            <ShopCard key={key} name={stores.name} />
+            <ShopCard key={key} name={stores.storeName} place={stores.city} />
           )
         })
         :
