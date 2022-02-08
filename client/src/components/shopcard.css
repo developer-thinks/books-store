@@ -1,0 +1,13 @@
+.container{
+    margin: 50px 0;
+}
+
+.card{
+    margin: 2% 2% !important;
+    background-color: rgba(231, 231, 240, 0.747) !important;
+}
+@media (max-width: 770px){
+    .card{
+        margin: 3% 5% !important;
+    }
+}
