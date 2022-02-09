@@ -10,11 +10,13 @@ const ShopCard = ({name, place}) =>{
             <CardContent className='cardcontent'>
                 <Typography variant='h4'  gutterBottom >{name}</Typography>
                 <Typography variant='h6'  gutterBottom > {place} </Typography>
-                <Button variant="contained" color="primary" href="#"> visit shop </Button>
+                <Link to="/yourstore">
+                    <Button variant="contained" color="primary" href="#"> visit shop </Button>
+                </Link>
             </CardContent>
         </Grid>
     )
 }
 
 export default ShopCard
-
+// a

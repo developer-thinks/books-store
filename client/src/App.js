@@ -10,6 +10,7 @@ import {BrowserRouter as Router, Link, Route, Routes, useNavigate} from 'react-r
 import RegisterShop from './components/RegisterShop';
 import { useEffect } from 'react';
 import Axios from 'axios';
+import ShopContent from './components/ShopContent';
 
 
 function App() {
@@ -66,6 +67,7 @@ function App() {
       <Routes>
           <Route exact path='/' element={<AvailableShops />} />
           <Route path='/register' element={<RegisterShop />} />
+          <Route path='/yourstore' element={<ShopContent />} />
       </Routes>  
       </Router>
     </div>
