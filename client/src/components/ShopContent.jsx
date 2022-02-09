@@ -7,6 +7,7 @@ import './shopcontent.css'
 
 const ShopContent = () => {
   return (
+    
     <div>
       <Grid container spacing={3} justifyContent="center">
         <Grid item component={Card} className="card" xs={12} md={3}>
