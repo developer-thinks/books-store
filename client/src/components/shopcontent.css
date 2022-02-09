@@ -7,6 +7,24 @@
     background-color: rgba(231, 231, 240, 0.747) !important;
     min-width: 13rem !important;
 }
+
+.shopcontent{
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* align-items: flex-end; */
+}
+
+/* .books{
+    display: flex !important;
+    flex-direction: row !important;
+} */
+
+.addbook{
+    margin-top: 1rem !important;
+}
+
+
+
 @media (max-width: 770px){
     .card{
         margin: 3% 5% !important;

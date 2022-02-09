@@ -5,11 +5,11 @@ const StoresSchema = new  mongoose.Schema({
         type : String,
         required : true,
     },
-    city : {
-        type : String,
+    secureCode :{
+        type:String,
         required : true
     },
-    email : {
+    city : {
         type : String,
         required : true
     }

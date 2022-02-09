@@ -3,7 +3,7 @@ import Button from '@material-ui/core/Button';
 import "./shopcard.css"
 import {Link} from 'react-router-dom'
 
-const ShopCard = ({name, place}) =>{
+const ShopCard = ({name, place, shopid}) =>{
     // console.log(name);
     return (
         <Grid item component={Card} className="card" xs={12} md={3} >

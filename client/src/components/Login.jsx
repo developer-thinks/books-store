@@ -3,7 +3,7 @@ import './registershop.css'
 import Axios from 'axios'
 import { useNavigate } from "react-router-dom";
 
-const RegisterShop = ()=>{
+const Login = ()=>{
 
     const [storeName, setStoreName] = useState("");
     const [place, setPlace] = useState("");
@@ -12,23 +12,24 @@ const RegisterShop = ()=>{
     const nevigate = useNavigate()
 
 
-    const handleFormSubmission = (e) =>{
-        e.preventDefault()
-        // const {storeName, place, email} 
-        Axios.post('http://localhost:5000/api/register', {
-            storeName, city : place, secureCode
-        }).then(response=>{
-            // console.log(response.data._id);
-            // setRegisteredShop()
-            localStorage.setItem("id", JSON.stringify(response.data._id));
-            nevigate('/')
-        })
+    const handleLogin = ()=>{
+
+            Axios.post('http://localhost:5000/api/login',{
+                storeName, secureCode
+            }).then(res=>{
+                // console.log(res);
+                if(res.data.message){
+                  nevigate('/')
+                } else{
+                  nevigate('/login')
+                }
+            })
     }
 
     return (
 
         <div className="app">
-          <h2>Register Your Shop : </h2>
+          <h2>Login to proceed: </h2>
           {/* <div className='container'> */}
             <div className="user_details">
             <label>shop name :</label>
@@ -51,23 +52,9 @@ const RegisterShop = ()=>{
               placeholder="Enter securecode" 
             />
             </div>
-
-            <div className="user_details">
-            <label>place :</label>
-            <input
-              className="input_label" 
-              type = "text" 
-              value={place} 
-              onChange={(e)=>setPlace(e.target.value)} 
-              placeholder="Enter place" 
-            />
-            </div>
-    
-            
-            
-            <button className='button' onClick={handleFormSubmission}> Submit</button>
+            <button className='button' onClick={handleLogin}> Login</button>
           </div>     
       );
 }
 
-export default RegisterShop;
+export default Login;

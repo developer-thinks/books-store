@@ -11,6 +11,8 @@ import RegisterShop from './components/RegisterShop';
 import { useEffect } from 'react';
 import Axios from 'axios';
 import ShopContent from './components/ShopContent';
+import AddNewBook from './components/AddNewBook';
+import Login from './components/Login';
 
 
 function App() {
@@ -35,7 +37,7 @@ function App() {
       <>
 
       <div className='addshop'>
-      <Link to="/register">
+      <Link to="/register" style={{textDecoration: 'none', color:'white'}}>
         <Button className='button_addshop' variant="contained" color="transparent" href="#">
           <AddIcon />
           Add Your shop 
@@ -47,7 +49,7 @@ function App() {
         bookStore ?
         bookStore.map((stores, key)=>{
           return(
-            <ShopCard key={key} name={stores.storeName} place={stores.city} />
+            <ShopCard key={key} name={stores.storeName} place={stores.city} shopid={stores._id} />
           )
         })
         :
@@ -68,6 +70,8 @@ function App() {
           <Route exact path='/' element={<AvailableShops />} />
           <Route path='/register' element={<RegisterShop />} />
           <Route path='/yourstore' element={<ShopContent />} />
+          <Route path='/addbook' element={<AddNewBook />} />
+          <Route path='/login' element={<Login />} />
       </Routes>  
       </Router>
     </div>

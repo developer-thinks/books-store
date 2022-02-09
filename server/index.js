@@ -7,7 +7,9 @@ app.use(cors())
 require('dotenv').config()
 
 const store = require('./routes/stores')
+const auth = require('./routes/auth')
 app.use('/api/', store)
+app.use('/api/', auth)
 
 mongoose.connect(process.env.MONGO_URL,console.log("db connected!"))
 

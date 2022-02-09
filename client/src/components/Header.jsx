@@ -16,7 +16,9 @@ const Header = ()=>{
           </Typography>
           </Link>
           <div>
-          <Button color="inherit">Login</Button>
+            <Link to="/login" style={{textDecoration: 'none', color:'white'}}>
+              <Button color="inherit">Login</Button>
+          </Link> 
           <Button color="inherit">Logout</Button>
           </div>
         </Toolbar>

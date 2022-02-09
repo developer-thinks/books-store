@@ -1,0 +1,21 @@
+
+.addbook{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.newbooktitle{
+    margin-top: 2rem !important;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem !important;
+    align-items: center;
+}
+input{
+    margin: 3% !important;
+}
