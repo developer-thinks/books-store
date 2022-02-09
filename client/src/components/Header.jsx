@@ -10,9 +10,9 @@ const Header = ()=>{
           <IconButton edge="start" className="menuButton" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Link to="/">
+          <Link to="/" style={{textDecoration: 'none', color:'white'}}>
           <Typography variant="h6" className="title">
-            Samsquare
+             <h4> &lt; Samsquare &#47;&gt; </h4>
           </Typography>
           </Link>
           <div>
